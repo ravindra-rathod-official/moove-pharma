@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moove Pharma - aa </title>
+    <link rel="icon" type="image/png" href="../media/logo.png" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="css/index..nav.mobile.css">
+    <style>
+      html, body {
+        overflow-x: hidden !important;
+      }
+      footer {
+        font-size: 0.85em !important;
+      }
+      @media (max-width: 700px) {
+        footer {
+          font-size: 0.78em !important;
+        }
+        section[style*="max-width: 600px"] {
+          margin: 8px auto 0 auto !important;
+          padding: 18px 4vw 14px 4vw !important;
+          max-width: 98vw !important;
+        }
+      }
+      section[style*="max-width: 600px"] {
+        margin: 32px auto 24px auto !important;
+        max-width: 900px !important;
+        width: calc(100% - 32px);
+        border-radius: 20px !important;
+        box-sizing: border-box;
+      }
+      @media (max-width: 900px) {
+        .navbar-toggle {
+          display: block;
+          background: rgba(255,255,255,0.18);
+          border: none;
+          font-size: 1.4rem;
+          color: #2b8af7;
+          border-radius: 10px;
+          padding: 4px 8px;
+          cursor: pointer;
+          z-index: 1002;
+          box-shadow: 0 2px 8px #2b8af733;
+          flex: 0 0 auto;
+          margin-left: auto;
+        }
+        .navbar-toggle-icon {
+          display: inline-block;
+          width: 20px;
+          height: 16px;
+          position: relative;
+        }
+        .navbar-toggle-icon span {
+          display: block;
+          height: 3px;
+          width: 100%;
+          background: #2b8af7;
+          border-radius: 2px;
+          margin-bottom: 3px;
+          transition: 0.3s;
+        }
+        .navbar-toggle-icon span:last-child {
+          margin-bottom: 0;
+        }
+        .center-nav {
+          display: none;
+          position: absolute;
+          top: 70px;
+          left: 30vw;
+          width: 40vw;
+          background: rgba(255,255,255,0.98);
+          flex-direction: column;
+          align-items: flex-start;
+          box-shadow: 0 8px 24px rgba(43,138,247,0.13);
+          z-index: 1001;
+          margin: 0;
+          padding: 18px 0 18px 0;
+          border-radius: 18px 18px 17px 17px;
+          gap: 0;
+        }
+        .center-nav.open {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        .center-nav a {
+          width: 100%;
+          padding: 16px 0;
+          color: #2b8af7;
+          font-weight: 600;
+          text-align: center;
+          border-bottom: 1px solid #e0eafc;
+          background: none;
+          transition: background 0.2s, color 0.2s;
+          font-size: 1.08rem;
+        }
+        .center-nav a:last-child {
+          border-bottom: none;
+        }
+        .center-nav a:hover {
+          background: #e0eafc;
+          color: #11998e;
+        }
+        .header-flex {
+          position: relative;
+        }
+      }
+    </style>
+  </head>
+  <body style="background: linear-gradient(120deg, #669bd9 0%, #70a4de 100%); animation: bg-glow 6s ease-in-out infinite alternate;">
+    <header>
+      <div class="container header-flex">
+        <img src="../media/logo.png" alt="Moove Pharma Logo" class="logo left-logo" />
+        <button class="navbar-toggle" aria-label="Open navigation" type="button">
+          <span class="navbar-toggle-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <nav class="center-nav">
+          <a href="../index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section style="max-width: 600px; margin: 60px auto 40px auto; background: rgba(255,255,255,0.35); border-radius: 18px; box-shadow: 0 4px 24px rgba(0,87,184,0.10); padding: 40px 32px; text-align: center; backdrop-filter: blur(8px);">
+        <h2 style="color: #2b8af7; font-size: 2rem; margin-bottom: 18px;">Contact Us</h2>
+        <p style="font-size: 1.13rem; color: #222; margin-bottom: 24px;">We'd love to hear from you! Please reach out via email, phone, or the social links below.</p>
+        <p style="font-size: 1.13rem; color: #222; margin-bottom: 24px;">  📍 Address: Phulambri, Chhatrapati Sambhajinagar (Aurangabad), Maharashtra – 431008 </p>
+        <div style="font-size: 1.1rem; color: #2b8af7; margin-bottom: 10px;">Email: <a href="mailto:export@moovepharma.com" style="color: #2b8af7; text-decoration: underline;">export@moovepharma.com</a></div>
+        <div style="font-size: 1.1rem; color: #2b8af7;">Phone: <a href="tel:+918459929035" style="color: #2b8af7; text-decoration: underline;">+91 8459929035</a></div>
+      </section>
+    </main>
+
+
+
+    <footer style="margin: 16px; border-radius: 20px; padding: 32px; box-sizing: border-box; width: calc(100% - 32px); background: #7fd0fa; color: #fff; text-align: center;">
+      <div class="container" style="font-size: 0.93em;">
+        <p>Email - export@moovepharma.com</p>
+        <p>+91 8459929035</p>
+        <div style="margin-top: 18px; display: flex; justify-content: center; gap: 22px; font-size: 2.1rem;">
+          <a href="mailto:export@moovepharma.com" style="color: #fff; text-decoration: none; transition: color 0.2s" target="_blank" rel="noopener" title="Gmail">
+            <img src="../media/gmail.png" alt="Gmail" style="width: 24px; height: 24px" />
+          </a>
+          <a href="https://www.linkedin.com/" style="color: #fff; text-decoration: none; transition: color 0.2s" target="_blank" rel="noopener" title="LinkedIn">
+            <img src="../media/linkedin.png" alt="LinkedIn" style="width: 24px; height: 24px" />
+          </a>
+          <a href="https://www.instagram.com/" style="color: #fff; text-decoration: none; transition: color 0.2s" target="_blank" rel="noopener" title="Instagram">
+            <img src="../media/instagram.png" alt="Instagram" style="width: 24px; height: 24px" />
+          </a>
+          <a href="https://wa.me/918459929035" style="color: #fff; text-decoration: none; transition: color 0.2s" target="_blank" rel="noopener" title="WhatsApp">
+            <img src="../media/whatsapp.png" alt="WhatsApp" style="width: 24px; height: 24px" />
+          </a>
+        </div>
+        <p>&copy; 2025 Moove Pharma. All rights reserved.</p>
+      <p>desinged by <a href="https://www.linkedin.com/in/rushikesh-borude-23b380198?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" style="color: rgb(37, 158, 219);"> rushikesh borude </a></p>
+      </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script>
+// Hamburger menu logic for mobile nav
+(function() {
+  var nav = document.querySelector('.center-nav');
+  var toggle = document.querySelector('.navbar-toggle');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      nav.classList.toggle('open');
+      toggle.classList.toggle('open');
+      if (nav.classList.contains('open')) {
+        document.body.classList.add('nav-blur-bg');
+      } else {
+        document.body.classList.remove('nav-blur-bg');
+      }
+    });
+    document.addEventListener('click', function(e) {
+      if (nav.classList.contains('open') && !nav.contains(e.target) && e.target !== toggle) {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        document.body.classList.remove('nav-blur-bg');
+      }
+    });
+  }
+})();
+    </script>
+  </body>
+</html>

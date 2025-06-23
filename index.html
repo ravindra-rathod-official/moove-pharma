@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moove Pharma</title>
+    <link rel="icon" type="image/png" href="media/logo.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index..nav.mobile.css" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+      }
+      @keyframes bg-glow {
+        /* 0% { filter: brightness(1) drop-shadow(0 0 0 #fff); } */
+        /* 50% { filter: brightness(1.08) drop-shadow(0 0 24px #b3e5fc); } */
+        /* 70% { filter: brightness(1) drop-shadow(0 0 0 #fff); } */
+      }
+      body {
+        transition: background 0.8s;
+        overflow-x: hidden;
+      }
+      /* --- Mobile Header/Footer Responsive Styles --- */
+      @media (max-width: 900px) {
+        .header-flex {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 18px 10px 10px;
+          min-height: 60px;
+        }
+        .logo.left-logo {
+          width: 72px;
+          height: 72px;
+          border-radius: 12px;
+          object-fit: contain;
+          background: none;
+          box-shadow: none;
+          flex: 0 0 auto;
+          margin-right: 16px;
+          margin-left: 10px;
+        }
+        .navbar-toggle {
+          display: block;
+          background: rgba(255, 255, 255, 0.18);
+          border: none;
+          font-size: 2.1rem;
+          color: #2b8af7;
+          border-radius: 10px;
+          padding: 6px 14px;
+          cursor: pointer;
+          z-index: 1002;
+          box-shadow: 0 2px 8px #2b8af733;
+          flex: 0 0 auto;
+          margin-left: auto;
+          position: relative;
+        }
+        .navbar-toggle .bar {
+          display: block;
+          width: 28px;
+          height: 3px;
+          margin: 5px 0;
+          background: #2b8af7;
+          border-radius: 2px;
+          transition: 0.3s;
+        }
+        .navbar-toggle.open .bar1 {
+          transform: translateY(8px) rotate(45deg);
+        }
+        .navbar-toggle.open .bar2 {
+          opacity: 0;
+        }
+        .navbar-toggle.open .bar3 {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+        .center-nav {
+          position: fixed;
+          top: 0;
+          right: -100vw;
+          width: 70vw;
+          max-width: 320px;
+          height: 100vh;
+          background: rgba(255, 255, 255, 0.85);
+          backdrop-filter: blur(16px);
+          box-shadow: -2px 0 24px #2b8af733;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 80px 24px 24px 24px;
+          gap: 18px;
+          transition: right 0.35s cubic-bezier(0.7, 0.2, 0.2, 1);
+          z-index: 1001;
+        }
+        .center-nav.open {
+          right: 0;
+        }
+        .center-nav a {
+          color: #2b8af7;
+          font-size: 1.18rem;
+          font-weight: 600;
+          text-decoration: none;
+          padding: 10px 0;
+          border-radius: 8px;
+          width: 100%;
+          transition: background 0.2s;
+        }
+        .center-nav a:hover {
+          background: #e3f2fd;
+        }
+        body.nav-blur-bg::before {
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(43, 138, 247, 0.13);
+          backdrop-filter: blur(2.5px);
+          z-index: 1000;
+        }
+        .navbar-toggle.open {
+          border-radius: 12px;
+          background: #fff;
+          backdrop-filter: blur(8px);
+          box-shadow: 0 2px 12px #2b8af733;
+        }
+      }
+      /* Desktop nav styles OUTSIDE mobile media query */
+      @media (min-width: 901px) {
+        .navbar-toggle {
+          display: none !important;
+        }
+        .center-nav {
+          position: static;
+          flex-direction: row;
+          height: auto;
+          width: auto;
+          background: none;
+          box-shadow: none;
+          padding: 0;
+          gap: 32px;
+          align-items: center;
+          transition: none;
+          right: 0 !important;
+        }
+        .center-nav a {
+          color: #2b8af7;
+          font-size: 1.08rem;
+          font-weight: 500;
+          background: none;
+          padding: 0;
+          width: auto;
+        }
+        .logo.left-logo {
+          width: 72px;
+          height: 72px;
+          background: none !important;
+          border-radius: 0 !important;
+          object-fit: contain;
+          box-shadow: none !important;
+          flex: 0 0 auto;
+          margin-right: 16px;
+        }
+      }
+      /* --- Mobile Footer --- */
+      @media (max-width: 900px) {
+        footer {
+          margin: 12px;
+          border-radius: 16px;
+          padding: 18px 10px 10px 10px;
+          width: calc(100% - 24px);
+          background: rgba(127, 208, 250, 0.93);
+          color: #fff;
+          text-align: center;
+          font-size: 0.98em;
+          box-shadow: 0 2px 12px #2b8af733;
+        }
+        footer .container {
+          padding: 0;
+        }
+        footer .container p {
+          margin: 6px 0 0 0;
+          font-size: 1em;
+        }
+        footer .container div {
+          margin-top: 10px !important;
+          gap: 14px !important;
+          font-size: 1.5rem !important;
+        }
+        footer .container img {
+          width: 22px !important;
+          height: 22px !important;
+        }
+      }
+      @media (max-width: 700px) {
+        .why-choose-section {
+          margin-top: 18px !important;
+          padding: 0 0 12px 0 !important;
+        }
+        .why-choose-container.clock-style {
+          width: 100vw !important;
+          height: auto !important;
+          min-width: 0 !important;
+          min-height: 0 !important;
+          max-width: 100vw !important;
+          max-height: none !important;
+          padding-top: 0 !important;
+          margin: 0 auto 18px auto !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          position: static !important;
+          box-sizing: border-box !important;
+          overflow-x: hidden !important;
+        }
+        .clock-logo {
+          width: 70px !important;
+          height: 70px !important;
+          border-width: 4px !important;
+          position: static !important;
+          margin: 0 auto 22px auto !important;
+          display: flex !important;
+          z-index: 1 !important;
+        }
+        .why-choose-container.clock-style > div[style*="position: absolute"],
+        .why-choose-container.clock-style > div[style*="position:absolute"] {
+          position: static !important;
+          width: 100% !important;
+          height: auto !important;
+          transform: none !important;
+        }
+        .clock-feature {
+          position: static !important;
+          width: 96vw !important;
+          min-width: 0 !important;
+          max-width: 99vw !important;
+          margin: 0 auto 22px auto !important;
+          padding: 16px 8px !important;
+          border-radius: 16px !important;
+          box-sizing: border-box !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          justify-content: center !important;
+          background: #fff !important;
+          box-shadow: 0 2px 12px #2b8af722 !important;
+          text-align: center !important;
+        }
+        .clock-feature > div {
+          padding: 14px 6px 10px 6px !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          text-align: center !important;
+        }
+        .why-choose-section h3 {
+          font-size: 1.2rem !important;
+          margin-bottom: 16px !important;
+        }
+      }
+      @media (max-width: 700px) {
+        .mission-cards {
+          display: grid !important;
+          grid-template-columns: 1fr 1fr !important;
+          gap: 10px !important;
+          justify-items: center !important;
+          align-items: stretch !important;
+          margin-bottom: 18px !important;
+        }
+        .mission-card {
+          width: 56vw !important;
+          max-width: 110px !important;
+          min-width: 0 !important;
+          padding: 7px 2px 6px 2px !important;
+          margin: 0 auto !important;
+          border-radius: 10px !important;
+          font-size: 0.78rem !important;
+          box-shadow: 0 1px 4px #2b8af722 !important;
+          background: #fff !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          text-align: center !important;
+        }
+        .mission-card > div {
+          font-size: 0.78rem !important;
+          padding: 4px 0 2px 0 !important;
+        }
+        .mission-card .mission-card-title {
+          font-size: 0.85rem !important;
+        }
+        .mission-card div[style*="width: 48px"] {
+          width: 28px !important;
+          height: 28px !important;
+          font-size: 1.1rem !important;
+          margin-bottom: 6px !important;
+        }
+        .mission-card span {
+          font-size: 1.1rem !important;
+        }
+      }
+      @media (max-width: 700px) {
+        .hero {
+          min-height: 48px !important; /* further reduced by ~40% */
+          padding-top: 4vw !important; /* further reduced */
+          padding-bottom: 3vw !important; /* further reduced */
+        }
+        .hero-text h2 {
+          font-size: 1.08rem !important;
+          margin-bottom: 8px !important;
+          line-height: 1.18 !important;
+          padding-left: 10vw !important;
+          padding-right: 10vw !important;
+        }
+        .hero-text p {
+          font-size: 0.93rem !important;
+          margin-bottom: 10px !important;
+          line-height: 1.22 !important;
+          padding-left: 10vw !important;
+          padding-right: 10vw !important;
+        }
+      }
+      @media (max-width: 700px) {
+        footer {
+          font-size: 0.85em !important;
+        }
+        footer .container {
+          font-size: 0.85em !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    style="
+      background: linear-gradient(120deg, #669bd9 0%, #70a4de 100%);
+      animation: bg-glow 6s ease-in-out infinite alternate;
+    "
+  >
+    <header>
+      <div class="container header-flex">
+        <img
+          src="media/logo.png"
+          alt="Moove Pharma Logo"
+          class="logo left-logo"
+        />
+        <button
+          class="navbar-toggle"
+          aria-label="Open navigation"
+          type="button"
+        >
+          <span class="bar bar1"></span>
+          <span class="bar bar2"></span>
+          <span class="bar bar3"></span>
+        </button>
+        <nav class="center-nav">
+          <a href="index.html">Home</a>
+          <a href="pages/products.html">Products</a>
+          <a href="pages/about.html">About</a>
+          <a href="pages/contact.html">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- hero section  -->
+      <section
+        class="hero"
+        style="
+          background: none;
+          margin: 16px 16px 0 16px;
+          border-radius: 20px;
+          box-shadow: 0 4px 24px rgba(0, 87, 184, 0.1);
+          padding: 48px 32px 32px 32px;
+          box-sizing: border-box;
+          width: calc(100% - 32px);
+          min-height: 340px;
+          min-width: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <img
+          src="media/wordmap (1).jpg"
+          alt="World Map"
+          style="
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            z-index: 0;
+            opacity: 0.85;
+            pointer-events: none;
+          "
+        />
+        <div
+          class="hero-content"
+          style="
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 18px;
+            position: relative;
+            z-index: 1;
+          "
+        >
+          <div class="hero-text">
+            <h2 id="typewriter">Welcome to Moove Pharma</h2>
+            <p>
+              Your Health, Our Mission <br />
+              Innovation in Every Dose.
+            </p>
+            <!-- <a href="pages/products.html" class="hero-btn">Explore Products</a> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Mission section  -->
+      <section class="about-section">
+        <div
+          class="about-container"
+          style="
+            padding: 40px 0;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            background: none;
+            box-shadow: none;
+            border-radius: 0;
+          "
+        >
+          <h3
+            style="
+              color: #2b8af7;
+              font-size: 1.7rem;
+              margin-bottom: 16px;
+              font-weight: 700;
+              letter-spacing: 1px;
+            "
+          >
+            Our Mission
+          </h3>
+
+          <p
+            style="
+              font-size: 1rem;
+              color: #222;
+              line-height: 1.7;
+              text-align: center;
+              margin-bottom: 32px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding-left: 32px;
+              padding-right: 32px;
+            "
+          >
+            At Moove Pharma, our mission is to improve lives by providing safe,
+            effective, and affordable medicines. We are committed to innovation
+            and quality in every product we deliver.
+          </p>
+
+          <div
+            class="mission-cards"
+            style="
+              display: flex;
+              gap: 24px;
+              justify-content: space-between;
+              margin-bottom: 32px;
+              flex-wrap: wrap;
+            "
+          >
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">💊</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #2b8af7;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+                Empower
+              </div>
+              <div style="color: #333; font-size: 0.97rem">
+                healthier communities
+              </div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🌱</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #43e97b;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+                Export quality
+              </div>
+              <div style="color: #333; font-size: 0.97rem">
+                without compromise
+              </div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🤝</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #f7971e;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+                Bridge pharma
+              </div>
+              <div style="color: #333; font-size: 0.97rem">
+                innovation & accessibility
+              </div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🌍</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #ee0979;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+                Nurture science
+              </div>
+              <div style="color: #333; font-size: 0.97rem">
+                -driven supply chains
+              </div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🧪</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #7b4397;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+                Build lasting
+              </div>
+              <div style="color: #333; font-size: 0.97rem">
+                trust with every shipment
+              </div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🌿</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #11998e;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+                Sustainability
+              </div>
+              <div style="color: #333; font-size: 0.97rem">
+                Committed to eco-friendly practices.
+              </div>
+            </div>
+          </div>
+          <div
+            class="cart-section"
+            style="
+              margin-top: 16px;
+              padding: 24px 20px;
+              border-radius: 14px;
+              background: rgba(255, 255, 255, 0.35);
+              box-shadow: 0 2px 12px rgba(43, 138, 247, 0.08);
+              backdrop-filter: blur(8px);
+              display: flex;
+              align-items: center;
+              gap: 18px;
+              justify-content: center;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(135deg, #2b8af7 60%, #e3f2fd 100%);
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                width: 48px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 2px 8px #2b8af733;
+              "
+            >
+              <span style="font-size: 1.7rem; color: #fff">💡</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--     Featured Products  -->
+      <section class="about-section">
+        <div
+          class="about-container"
+          style="
+            padding: 40px 0;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            background: none;
+            box-shadow: none;
+            border-radius: 0;
+          "
+        >
+          <h3
+            style="
+              color: #2b8af7;
+              font-size: 1.7rem;
+              margin-bottom: 16px;
+              font-weight: 700;
+              letter-spacing: 1px;
+            "
+          >
+            Product Categories
+          </h3>
+
+          <p
+            style="
+              font-size: 1rem;
+              color: #222;
+              line-height: 1.7;
+              text-align: center;
+              margin-bottom: 32px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding-left: 32px;
+              padding-right: 32px;
+            "
+          >
+            At Moove Pharma, we offer a diverse range of high-quality products
+            designed to enhance health and well-being. Our categories span
+            across prescription medications, over-the-counter solutions,
+            nutritional supplements, herbal remedies, and personal care
+            essentials.
+          </p>
+
+          <div
+            style="
+              display: flex;
+              gap: 24px;
+              justify-content: space-between;
+              margin-bottom: 32px;
+              flex-wrap: wrap;
+            "
+          >
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">💊</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #2b8af7;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+                General Range:
+              </div>
+              <div style="color: #333; font-size: 0.97rem">Categories 1</div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🌱</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #43e97b;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+                Antibiotics
+              </div>
+              <div style="color: #333; font-size: 0.97rem">categories 2</div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🤝</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #f7971e;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+                Vitamins & Supplements
+              </div>
+              <div style="color: #333; font-size: 0.97rem">categories 3</div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🌍</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #ee0979;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+                categories 4
+              </div>
+              <div style="color: #333; font-size: 0.97rem">comming soon</div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🧪</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #7b4397;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+                categories 5
+              </div>
+              <div style="color: #333; font-size: 0.97rem">comming soon..</div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🌿</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #11998e;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+                categories 6
+              </div>
+              <div style="color: #333; font-size: 0.97rem">comming soon</div>
+            </div>
+          </div>
+          <div
+            class="cart-section"
+            style="
+              margin-top: 16px;
+              padding: 24px 20px;
+              border-radius: 14px;
+              background: rgba(255, 255, 255, 0.35);
+              box-shadow: 0 2px 12px rgba(43, 138, 247, 0.08);
+              backdrop-filter: blur(8px);
+              display: flex;
+              align-items: center;
+              gap: 18px;
+              justify-content: center;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(135deg, #2b8af7 60%, #e3f2fd 100%);
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <span style="font-size: 1.7rem; color: #fff">💡</span>
+            </div>
+            <div
+              style="
+                flex: 1;
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.13rem;
+                color: #2b8af7;
+                letter-spacing: 0.5px;
+              "
+            >
+              Start your health journey with Moove Pharma!
+            </div>
+            <div
+              style="
+                background: linear-gradient(135deg, #2b8af7 60%, #e3f2fd 100%);
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 2px 8px #2b8af733;
+              "
+            >
+              <span style="font-size: 1.7rem; color: #fff">💡</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- why choose move pharma  -->
+      <section class="about-section">
+        <div
+          class="about-container"
+          style="
+            padding: 40px 0;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            background: none;
+            box-shadow: none;
+            border-radius: 0;
+          "
+        >
+          <h3
+            style="
+              color: #2b8af7;
+              font-size: 1.7rem;
+              margin-bottom: 16px;
+              font-weight: 700;
+              letter-spacing: 1px;
+            "
+          >
+            Why Choose Moove Pharma?
+          </h3>
+
+          <p
+            style="
+              font-size: 1rem;
+              color: #222;
+              line-height: 1.7;
+              text-align: center;
+              margin-bottom: 32px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding-left: 32px;
+              padding-right: 32px;
+            "
+          >
+            Moove Pharma is committed to delivering affordable, high-quality
+            pharmaceutical products globally. With a foundation rooted in
+            scientific research, global compliance, and ethical business
+            practices, we ensure every shipment meets the highest regulatory and
+            therapeutic standards. Whether you're a distributor, hospital, or
+            clinic, we deliver not just medicine, but trust.
+          </p>
+
+          <div
+            class="mission-cards"
+            style="
+              display: flex;
+              gap: 24px;
+              justify-content: space-between;
+              margin-bottom: 32px;
+              flex-wrap: wrap;
+            "
+          >
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">💊</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #2b8af7;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+Affordable               </div>
+              <div style="color: #333; font-size: 0.97rem">
+              Quality
+              </div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🌱</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #43e97b;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+             Global 
+              </div>
+              <div style="color: #333; font-size: 0.97rem">
+               Standards
+              </div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🤝</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #f7971e;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+Scientific 
+
+              </div>
+              <div style="color: #333; font-size: 0.97rem">
+Excellence               </div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🌍</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #ee0979;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+Ethical 
+
+              </div>
+              <div style="color: #333; font-size: 0.97rem">
+Practices              </div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🧪</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #7b4397;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+Trusted 
+
+              </div>
+              <div style="color: #333; font-size: 0.97rem">
+Supply              </div>
+            </div>
+            <div
+              class="mission-card"
+              style="
+                flex: 1 1 180px;
+                min-width: 180px;
+                max-width: 210px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 16px;
+                box-shadow: 0 2px 12px rgba(43, 138, 247, 0.1);
+                padding: 28px 18px 22px 18px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  background: linear-gradient(135deg);
+                  width: 48px;
+                  height: 48px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 14px;
+                "
+              >
+                <span style="font-size: 1.7rem; color: #fff">🌿</span>
+              </div>
+              <div
+                style="
+                  font-weight: 600;
+                  color: #11998e;
+                  font-size: 1.08rem;
+                  margin-bottom: 6px;
+                "
+              >
+Patient 
+
+              </div>
+              <div style="color: #333; font-size: 0.97rem">
+Focused              </div>
+            </div>
+          </div>
+          <div
+            class="cart-section"
+            style="
+              margin-top: 16px;
+              padding: 24px 20px;
+              border-radius: 14px;
+              background: rgba(255, 255, 255, 0.35);
+              box-shadow: 0 2px 12px rgba(43, 138, 247, 0.08);
+              backdrop-filter: blur(8px);
+              display: flex;
+              align-items: center;
+              gap: 18px;
+              justify-content: center;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(135deg, #2b8af7 60%, #e3f2fd 100%);
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <span style="font-size: 1.7rem; color: #fff">💡</span>
+            </div>
+            <div
+              style="
+                flex: 1;
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.13rem;
+                color: #2b8af7;
+                letter-spacing: 0.5px;
+              "
+            >
+              Start your health journey with Moove Pharma!
+            </div>
+            <div
+              style="
+                background: linear-gradient(135deg, #2b8af7 60%, #e3f2fd 100%);
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 2px 8px #2b8af733;
+              "
+            >
+              <span style="font-size: 1.7rem; color: #fff">💡</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      style="
+        margin: 16px;
+        border-radius: 20px;
+        padding: 32px;
+        box-sizing: border-box;
+        width: calc(100% - 32px);
+        background: #7fd0fa;
+        color: #fff;
+        text-align: center;
+      "
+    >
+      <div class="container" style="font-size: 0.93em">
+        <p>Email - export@moovepharma.com</p>
+        <p>+91 8459929035</p>
+        <div
+          style="
+            margin-top: 18px;
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            font-size: 2.1rem;
+          "
+        >
+          <a
+            href="mailto:export@moovepharma.com"
+            style="color: #fff; text-decoration: none; transition: color 0.2s"
+            target="_blank"
+            rel="noopener"
+            title="Gmail"
+          >
+            <img
+              src="media/gmail.png"
+              alt="Gmail"
+              style="width: 24px; height: 24px"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/"
+            style="color: #fff; text-decoration: none; transition: color 0.2s"
+            target="_blank"
+            rel="noopener"
+            title="LinkedIn"
+          >
+            <img
+              src="media/linkedin.png"
+              alt="LinkedIn"
+              style="width: 24px; height: 24px"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/"
+            style="color: #fff; text-decoration: none; transition: color 0.2s"
+            target="_blank"
+            rel="noopener"
+            title="Instagram"
+          >
+            <img
+              src="media/instagram.png"
+              alt="Instagram"
+              style="width: 24px; height: 24px"
+            />
+          </a>
+          <a
+            href="https://wa.me/8459929035"
+            style="color: #fff; text-decoration: none; transition: color 0.2s"
+            target="_blank"
+            rel="noopener"
+            title="WhatsApp"
+          >
+            <img
+              src="media/whatsapp.png"
+              alt="WhatsApp"
+              style="width: 24px; height: 24px"
+            />
+          </a>
+        </div>
+        <p>&copy; 2025 Moove Pharma. All rights reserved.</p>
+        <p>
+          designed by
+          <a href="https://www.linkedin.com/in/rushikesh-borude-23b380198?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" style="color: rgb(37, 158, 219)">
+            rushikesh borude
+          </a>
+        </p>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+      // Typewriter effect for hero heading (looping, last word highlight and change)
+      const words = ["Moove Pharma", "Innovation", "Care", "Quality", "Trust"];
+      const baseText = "Welcome to ";
+      const el = document.getElementById("typewriter");
+      let wordIndex = 0;
+      let i = 0;
+      let isDeleting = false;
+      let currentWord = words[wordIndex];
+
+      function type() {
+        const displayText =
+          baseText + `<span class='typewriter-highlight'>${currentWord}</span>`;
+        const fullText = baseText + currentWord;
+        if (!isDeleting && i <= fullText.length) {
+          el.innerHTML =
+            baseText.substring(0, Math.min(i, baseText.length)) +
+            (i > baseText.length
+              ? `<span class='typewriter-highlight'>${currentWord.substring(
+                  0,
+                  i - baseText.length
+                )}</span>`
+              : "");
+          i++;
+          setTimeout(type, 70);
+        } else if (isDeleting && i >= baseText.length) {
+          el.innerHTML =
+            baseText +
+            `<span class='typewriter-highlight'>${currentWord.substring(
+              0,
+              i - baseText.length
+            )}</span>`;
+          i--;
+          setTimeout(type, 40);
+        } else {
+          if (!isDeleting) {
+            setTimeout(() => {
+              isDeleting = true;
+              type();
+            }, 1200);
+          } else {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            currentWord = words[wordIndex];
+            setTimeout(() => {
+              i = baseText.length;
+              type();
+            }, 500);
+          }
+        }
+      }
+      if (el) {
+        i = 0;
+        isDeleting = false;
+        wordIndex = 0;
+        currentWord = words[wordIndex];
+        setTimeout(type, 500);
+      }
+    </script>
+    <script>
+      // Hamburger menu logic for mobile nav
+      (function () {
+        var nav = document.querySelector(".center-nav");
+        var toggle = document.querySelector(".navbar-toggle");
+        if (toggle && nav) {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation();
+            nav.classList.toggle("open");
+            toggle.classList.toggle("open"); // Add this line to toggle .open on button
+            if (nav.classList.contains("open")) {
+              document.body.classList.add("nav-blur-bg");
+            } else {
+              document.body.classList.remove("nav-blur-bg");
+            }
+          });
+          document.addEventListener("click", function (e) {
+            if (
+              nav.classList.contains("open") &&
+              !nav.contains(e.target) &&
+              e.target !== toggle
+            ) {
+              nav.classList.remove("open");
+              toggle.classList.remove("open"); // Remove .open from button when closing
+              document.body.classList.remove("nav-blur-bg");
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
