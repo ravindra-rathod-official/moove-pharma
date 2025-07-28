@@ -8,7 +8,17 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/index..nav.mobile.css" />
 
-    <style>
+    <style>      
+
+      /* Navbar text bold, larger, and hover effect */
+      .center-nav a {
+        font-weight: 700 !important;
+        font-size: 1.18rem !important;
+        transition: font-size 0.18s, color 0.18s;
+      }
+      .center-nav a:hover {
+        font-size: 1.28rem !important;
+      }
       html {
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
@@ -24,6 +34,18 @@
       }
       /* --- Mobile Header/Footer Responsive Styles --- */
       @media (max-width: 900px) {
+        header {
+          position: sticky !important;
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          z-index: 1002 !important;
+          background: rgba(255,255,255,0.92) !important;
+          box-shadow: 0 2px 12px rgba(43,138,247,0.08) !important;
+          backdrop-filter: blur(8px) !important;
+          width: 100% !important;
+          margin: 0 !important;
+        }
         .header-flex {
           display: flex;
           align-items: center;
@@ -125,6 +147,13 @@
           background: #fff;
           backdrop-filter: blur(8px);
           box-shadow: 0 2px 12px #2b8af733;
+        }
+        .center-nav {
+          display: none !important;
+          /* Only show when .open is present */
+        }
+        .center-nav.open {
+          display: flex !important;
         }
       }
       /* Desktop nav styles OUTSIDE mobile media query */
@@ -394,24 +423,25 @@
             object-fit: cover;
             border-radius: 20px;
             z-index: 0;
-            opacity: 0.85;
+            opacity: 0.45;
             pointer-events: none;
           "
         />
         <div
           class="hero-content"
           style="
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(255,255,255,0.72); /* more visible text bg */
             border-radius: 18px;
             position: relative;
             z-index: 1;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
           "
         >
-          <div class="hero-text">
+          <div class="hero-text" style="text-shadow: 0 2px 8px #fff, 0 1px 2px #2b8af7;">
             <h2 id="typewriter">Welcome to Moove Pharma</h2>
             <p>
-              Your Health, Our Mission <br />
-              Innovation in Every Dose.
+            Love all, Serve all, Feed all <br />
+
             </p>
             <!-- <a href="pages/products.html" class="hero-btn">Explore Products</a> -->
           </div>
@@ -743,7 +773,8 @@
               margin-top: 16px;
               padding: 24px 20px;
               border-radius: 14px;
-              background: rgba(255, 255, 255, 0.35);
+              background: #fff;
+              border: 2.5px solid #111;
               box-shadow: 0 2px 12px rgba(43, 138, 247, 0.08);
               backdrop-filter: blur(8px);
               display: flex;
@@ -752,6 +783,8 @@
               justify-content: center;
             "
           >
+
+          <h4 style="color: yellowgreen;" >  Start your health journey with Moove Pharma!</h4>
             <div
               style="
                 background: linear-gradient(135deg, #2b8af7 60%, #e3f2fd 100%);
@@ -1088,7 +1121,8 @@
               margin-top: 16px;
               padding: 24px 20px;
               border-radius: 14px;
-              background: rgba(255, 255, 255, 0.35);
+              background: #fff;
+              border: 2.5px solid #111;
               box-shadow: 0 2px 12px rgba(43, 138, 247, 0.08);
               backdrop-filter: blur(8px);
               display: flex;
@@ -1110,6 +1144,8 @@
             >
               <span style="font-size: 1.7rem; color: #fff">💡</span>
             </div>
+
+
             <div
               style="
                 flex: 1;
@@ -1118,10 +1154,16 @@
                 font-size: 1.13rem;
                 color: #2b8af7;
                 letter-spacing: 0.5px;
+                background: #fff;
+                border-radius: 8px;
+                padding: 8px 12px;
+                box-sizing: border-box;
+                display: inline-block;
               "
             >
               Start your health journey with Moove Pharma!
             </div>
+
             <div
               style="
                 background: linear-gradient(135deg, #2b8af7 60%, #e3f2fd 100%);
@@ -1139,6 +1181,8 @@
           </div>
         </div>
       </section>
+
+
 
       <!-- why choose move pharma  -->
       <section class="about-section">
@@ -1467,7 +1511,8 @@ Focused              </div>
               margin-top: 16px;
               padding: 24px 20px;
               border-radius: 14px;
-              background: rgba(255, 255, 255, 0.35);
+              background: #fff;
+              border: 2.5px solid #111;
               box-shadow: 0 2px 12px rgba(43, 138, 247, 0.08);
               backdrop-filter: blur(8px);
               display: flex;
@@ -1497,6 +1542,11 @@ Focused              </div>
                 font-size: 1.13rem;
                 color: #2b8af7;
                 letter-spacing: 0.5px;
+                background: #fff;
+                border-radius: 8px;
+                padding: 8px 12px;
+                box-sizing: border-box;
+                display: inline-block;
               "
             >
               Start your health journey with Moove Pharma!
@@ -1557,7 +1607,7 @@ Focused              </div>
             />
           </a>
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/company/moove-pharma/"
             style="color: #fff; text-decoration: none; transition: color 0.2s"
             target="_blank"
             rel="noopener"
@@ -1570,7 +1620,7 @@ Focused              </div>
             />
           </a>
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/moovepharma/"
             style="color: #fff; text-decoration: none; transition: color 0.2s"
             target="_blank"
             rel="noopener"
@@ -1608,7 +1658,7 @@ Focused              </div>
     <script src="js/main.js"></script>
     <script>
       // Typewriter effect for hero heading (looping, last word highlight and change)
-      const words = ["Moove Pharma", "Innovation", "Care", "Quality", "Trust"];
+      const words = ["Moove Pharma", "Moove Pharma", "Moove Pharma", "Moove Pharma", "Moove Pharma"];
       const baseText = "Welcome to ";
       const el = document.getElementById("typewriter");
       let wordIndex = 0;
