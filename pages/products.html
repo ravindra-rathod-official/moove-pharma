@@ -46,20 +46,34 @@
       <section
         class="products-hero"
         style="
-          margin: 32px auto 0 auto !important;
+          margin: 16px !important;
           border-radius: 20px !important;
           background: rgba(255, 255, 255, 0.35);
           box-shadow: 0 4px 24px rgba(0, 87, 184, 0.1);
           padding: 40px 32px 32px 32px;
           box-sizing: border-box;
           width: calc(100% - 32px);
-          max-width: 900px;
+          max-width: none;
           text-align: center;
           align-items: center;
           display: flex;
           flex-direction: column;
+          position: relative;
+          overflow: hidden;
         "
       >
+        <img 
+          src="../media/product_section_girl_image  (2).jpg" 
+          alt="Product Categories Header Image" 
+          style="
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+          "
+        />
         <h2>Our Product Categories</h2>
         <p>Browse our pharma products by category below.</p>
         <div
@@ -122,6 +136,18 @@
             </ul>
           </div>
         </div>
+        <img 
+          src="../media/product_section_girl_image  (1).jpg" 
+          alt="Product Categories Footer Image" 
+          style="
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-top: 40px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+          "
+        />
       </section>
       <style>
         /* Style for the product list section (not modal) */
@@ -256,6 +282,18 @@
         html,
         body {
           overflow-x: hidden !important;
+        }
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          background: white;
+          box-shadow: 0 2px 8px rgba(43, 138, 247, 0.1);
+        }
+        main {
+          margin-top: 90px;
         }
         body.nav-blur-bg::before {
           content: "";
@@ -582,7 +620,7 @@
     >
       <div class="container" style="font-size: 0.93em">
         <p>Email - export@moovepharma.com</p>
-        <p>+91 8459929035</p>
+        <p>  +91 8329436643 | +91 8459929035  </p>
         <div
           style="
             margin-top: 18px;
